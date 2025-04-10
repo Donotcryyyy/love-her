@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For You 💖</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive;
+      background-color: #fff0f5;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #e75480;
+      font-size: 2.5em;
+    }
+    #flower-container {
+      display: none;
+      font-size: 2em;
+      margin-top: 20px;
+    }
+    .flower {
+      margin: 10px;
+    }
+    .game-area {
+      display: none;
+      margin-top: 30px;
+    }
+    .heart {
+      font-size: 2em;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .heart:hover {
+      transform: scale(1.3);
+    }
+    #final-message {
+      display: none;
+      font-size: 1.8em;
+      color: #ff1493;
+      margin-top: 30px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: pink;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hey you 💌</h1>
+  <p>I made something special... click the button 😳</p>
+  <button onclick="showFlowers()">Click me 🌹</button>
+
+  <div id="flower-container">
+    <p class="flower">🌸 🌷 🌼 🌹 🌺 💐</p>
+    <p>I wanna be your boyfriend 💘</p>
+    <button onclick="startGame()">Play a quick game 🎮</button>
+  </div>
+
+  <div class="game-area" id="game">
+    <p>Click the 💖 5 times!</p>
+    <div id="hearts">
+      <span class="heart" onclick="clickHeart()">💖</span>
+    </div>
+    <p>Clicks: <span id="count">0</span>/5</p>
+  </div>
+
+  <div id="final-message">
+    <p>So... I really mean it 😚<br> I wanna be your boyfriend 💞</p>
+  </div>
+
+  <script>
+    function showFlowers() {
+      document.getElementById('flower-container').style.display = 'block';
+    }
+
+    function startGame() {
+      document.getElementById('game').style.display = 'block';
+    }
+
+    let clicks = 0;
+    function clickHeart() {
+      clicks++;
+      document.getElementById('count').innerText = clicks;
+      if (clicks >= 5) {
+        document.getElementById('final-message').style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>
